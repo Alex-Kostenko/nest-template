@@ -66,8 +66,8 @@
   },
   "lint-staged": {
     "**/*.{js,ts,tsx}": [
-      "yarn run tidy",
-      "bash -c 'yarn run ts:check'"
+      "yarn tidy",
+      "bash -c 'yarn ts:check'"
     ]
   },
   "jest": {
