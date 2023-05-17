@@ -1,21 +1,53 @@
 {
   "compilerOptions": {
+    "target": "es2017",
     "module": "commonjs",
-    "declaration": true,
+    "lib": ["es6", "es2017", "esnext.asynciterable"],
+    "outDir": "./dist",
+    "moduleResolution": "node",
     "removeComments": true,
+    "strictFunctionTypes": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "allowSyntheticDefaultImports": true,
+    "incremental": false,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": false,
+    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
     "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "paths": {
+      "@/*": ["src/*"],
+      "@test/*": ["test/*"],
+      "@nestjs/common": ["node_modules/@nestjs/common"],
+      "rxjs": ["node_modules/rxjs"],
+      "axios": ["node_modules/axios"],
+      "class-validator": ["node_modules/class-validator"]
+    },
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths",
+        "exclude": ["*"]
+      }
+    ]
+  },
+  "exclude": ["node_modules"],
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.d.ts",
+    "./src/**/*.json",
+    "./src/**/*.json5",
+    "./test/**/*.ts"
+  ]
 }
